@@ -1,0 +1,75 @@
+:root{
+    --background--color:#444;
+    --front--color:white;
+    --right--color:rgb(216, 48, 48);
+    --back--color:rgb(55, 168, 55);
+    --left--color:rgb(65, 65, 207);
+    --top--color:rgb(255, 255, 112);
+    --bottom--color:rgb(235, 164, 32);
+}
+
+body{
+    background-color: var(--background--color)
+}
+
+.container{
+    width: 300px;
+    height: 300px;
+    margin: 300px auto;
+    perspective: 600px;
+}
+
+.cube{
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d ;
+    transform: translateZ(-150px) 
+    rotateX(30deg);
+    position: relative;
+    transition: 1s;
+}
+
+.cube:hover{
+    transform: translateZ(-150px) rotateX(30deg) rotateY(360deg); /* first animation */
+}
+
+.cube:hover{
+    transform: translateZ(50px) rotateX(300deg) rotateY(60deg); /* second animation */
+}
+
+
+.face{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+
+.front{
+    background-color: var(--front--color);
+    transform: rotateY(0deg) translateZ(150px);
+}
+
+.right{
+    background-color: var(--right--color);
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.back{
+    background-color: var(--back--color);
+    transform: rotateY(180deg) translateZ(150px);
+}
+
+.left{
+    background-color: var(--left--color);
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top{
+    background-color: var(--top--color);
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom{
+    background-color: var(--bottom--color);
+    transform: rotateX(-90deg) translateZ(150px);
+}
